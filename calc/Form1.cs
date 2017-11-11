@@ -225,7 +225,7 @@ namespace calc
                 baseNumber = "(-";                
             }
             
-            //Om baseNumber är tom
+            //Om baseNumber inte är ett tal och inte är en operator
             //Sätt baseNumber till "(-"
             else if (baseNumber == "" || baseNumber == "0,")
             {
@@ -264,13 +264,23 @@ namespace calc
                 {
                 }
 
-                //Om baseNumber är ett tal eller en slutparentes
-                //Lägg till talet och ett multiplikationstecken i equation
-                else if (baseNumber != "(-" || baseNumber != "0," || baseNumber != "(-0,")
+                //Om baseNumber är ett negativt tal
+                //Ta bort parentesen och lägg till baseNumber i equation
+                //Lägg till ett multiplikationstecken i equation
+                else if (baseNumber.Contains("(-") && baseNumber != "(-")
                 {
+                    baseNumber = baseNumber.Remove(0, 1);
                     equation.Add(baseNumber);
                     equation.Add("*");
                 }
+
+                //Om baseNumber är ett positivt tal eller en slutparentes
+                //Lägg till talet och ett multiplikationstecken i equation
+                else if (baseNumber != "(-" && baseNumber != "0," && baseNumber != "(-0,")
+                {
+                    equation.Add(baseNumber);
+                    equation.Add("*");
+                }                
 
                 //Sätt alltid baseNumber till "("
                 baseNumber = "(";
@@ -281,10 +291,22 @@ namespace calc
             //Om användaren skriver i en parentes
             else
             {
-                //Om baseNumber är ett tal
+                //Om baseNumber är ett negativt tal
+                //Ta bort parentesen och lägg till baseNumber i equation
+                //Sätt baseNumber till slutparentes
+                //Sätt parentheses till false
+                if (baseNumber.Contains("(-") && baseNumber != "(-")
+                {
+                    baseNumber = baseNumber.Remove(0, 1);
+                    equation.Add(baseNumber);
+                    baseNumber = ")";
+                    parentheses = false;
+                }
+
+                //Om baseNumber är ett positivt tal
                 //lägg till talet i equation och sätt baseNumber till ")"
-                //sätt parentheses till false;
-                if (baseNumber != "+" && baseNumber != "-" && baseNumber != "*" && baseNumber != "/" && baseNumber != "(-" && baseNumber != "(-0," && baseNumber != "0," && baseNumber != "(")
+                //sätt parentheses till false
+                else if (baseNumber != "+" && baseNumber != "-" && baseNumber != "*" && baseNumber != "/" && baseNumber != "(-" && baseNumber != "(-0," && baseNumber != "0," && baseNumber != "(")
                 {
                     equation.Add(baseNumber);
                     baseNumber = ")";
@@ -397,12 +419,16 @@ namespace calc
                 //Tar bort sista stringen i equation
                 //(Eftersom den är i baseNumber)
                 //(Annars skulle den hamna två gånger i equation)
-                equation.Remove(equation.Last());
+                equation.RemoveAt(equation.Count - 1);
             }
 
             //Annars ta bort baseNumber
+            //Och sätt parentheses till false bara för säkerhetsskull
             else
+            {
                 baseNumber = "";
+                parentheses = false;
+            }
 
             txtOutput.Text = baseNumber;
         }

@@ -7,3 +7,12 @@ C:\Users\elev\Documents\skola\programmering 2\exempel\UPPGIFT 2 TEST\calc\obj\De
 C:\Users\elev\Documents\skola\programmering 2\exempel\UPPGIFT 2 TEST\calc\obj\Debug\calc.csproj.GenerateResource.Cache
 C:\Users\elev\Documents\skola\programmering 2\exempel\UPPGIFT 2 TEST\calc\obj\Debug\calc.exe
 C:\Users\elev\Documents\skola\programmering 2\exempel\UPPGIFT 2 TEST\calc\obj\Debug\calc.pdb
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\bin\Debug\calc.exe.config
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.exe
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.pdb
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\bin\Debug\calc.exe
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\bin\Debug\calc.pdb
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.csprojResolveAssemblyReference.cache
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.Form1.resources
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.Properties.Resources.resources
+C:\Users\elev\Documents\GitHub\P2-Uppgift2_hugo_hj-lte\calc\obj\Debug\calc.csproj.GenerateResource.Cache
